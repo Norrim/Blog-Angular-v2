@@ -11,26 +11,47 @@
             <div class="modal-body">
                 <form class="form-horizontal" #blogForm="ngForm" novalidate>
                     <div class="form-group">
-                        <label for="title" class="col-sm-2 control-label">Title</label>
+                        <label for="title" class="col-sm-2 control-label">Titre</label>
                         <div class="col-sm-10">
                             <input class="form-control" id="title" name="title" [(ngModel)]="blogModel.title" #title="ngModel" required>
                             <div [hidden]="title.valid || title.pristine" class="alert alert-danger">
-                                <p *ngIf="title.errors?.required">Title required</p>
+                                <p *ngIf="title.errors?.required">Titre requis</p>
                             </div>
                         </div>
                     </div>
+
                     <div class="form-group">
-                        <label for="content" class="col-sm-2 control-label">Content</label>
+                        <label for="image" class="col-sm-2 control-label">Image</label>
+                        <div class="col-sm-10">
+                            <input class="form-control" id="image" name="image" [(ngModel)]="blogModel.image" #image="ngModel" required>
+                            <div [hidden]="image.valid || image.pristine" class="alert alert-danger">
+                                <p *ngIf="image.errors?.required">Image requise</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="describe" class="col-sm-2 control-label">Description</label>
+                        <div class="col-sm-10">
+                            <textarea class="form-control" id="describe" rows="10" name="describe" [(ngModel)]="blogModel.describe" #describe="ngModel" required></textarea>
+                            <div [hidden]="describe.valid || describe.pristine" class="alert alert-danger">
+                                <p *ngIf="describe.errors?.required">Description requise</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="content" class="col-sm-2 control-label">Contenu</label>
                         <div class="col-sm-10">
                             <textarea class="form-control" id="content" rows="10" name="content" [(ngModel)]="blogModel.content" #content="ngModel" required></textarea>
                             <div [hidden]="content.valid || content.pristine" class="alert alert-danger">
-                                <p *ngIf="content.errors?.required">Content required</p>
+                                <p *ngIf="content.errors?.required">Contentu requis</p>
                             </div>
                         </div>
                     </div>
                     <div class="form-group">
                         <div class="col-sm-offset-2 col-sm-10">
-                            <button (click)="addOrUpdateBlog(blogModel);blogForm.reset()" [disabled]="!blogForm.form.valid" class="btn btn-default">Done</button>
+                            <button (click)="addOrUpdateBlog(blogModel);blogForm.reset()" [disabled]="!blogForm.form.valid" class="btn btn-primary">Done</button>
                         </div>
                     </div>
                 </form>

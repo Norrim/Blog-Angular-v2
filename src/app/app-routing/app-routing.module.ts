@@ -8,12 +8,11 @@ import { AdminModule } from '../admin/admin/admin.module'
 
 import { BlogResolverService, BlogDetailResolverService, BlogCommentResolverService, NextBlogResolverService, PreBlogResolverService } from '../service/blog-resolver.service';
 
-// 获取blogmodule
+// blogmodule
 export function loadBlogsModule() { return BlogsModule; }
-// 获取blogDetailModule
+// blogDetailModule
 export function loadBlogDetailModule() { return BlogDetailModule; }
-
-// 获取adminModule
+// adminModule
 export function loadAdminModule() { return AdminModule; }
 
 
@@ -28,10 +27,7 @@ export const routes: Routes = [
   },
   {
     path: 'home',
-    loadChildren: loadBlogsModule,
-    resolve: {
-      blogList: BlogResolverService
-    }
+    loadChildren: '../home/home.module#HomeModule'
   },
   {
     path: 'blog',

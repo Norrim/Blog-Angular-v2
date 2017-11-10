@@ -2,7 +2,7 @@
     <div class="row">
         <div class="col-sm-12 margin-top">
             <div class="pull-right">
-                <button class="btn btn-primary" (click)="adminFormBlog.adminForm()"><i class="ion-plus m-right-xs"></i>New blog</button>
+                <button class="btn btn-warning" (click)="adminFormBlog.adminForm()"><i class="ion-plus m-right-xs"></i>New blog</button>
                 <admin-form-blog (onParentEvent)="onParentEvent()" #adminFormBlog></admin-form-blog>
             </div>
         </div>
@@ -13,12 +13,14 @@
                 <thead>
                     <tr>
                         <th>id</th>
-                        <th style="width:15%">Title</th>
+                        <th style="width:15%">Titre</th>
                         <th>Date</th>
-                        <th>User</th>
-                        <th>views</th>
-                        <th style="width:30%">content</th>
-                        <th style="width:10%">actions</th>
+                        <th>Utilisateur</th>
+                        <th>Vues</th>
+                        <th>Images</th>
+                        <th>Description</th>
+                        <th style="width:30%">Contenu</th>
+                        <th style="width:10%">Actions</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -28,10 +30,12 @@
                         <td>{{blog.createdTime | date:"yyyy-MM-dd HH:mm:ss"}}</td>
                         <td>{{blog.author}}</td>
                         <td>{{blog.viewCount}}</td>
+                        <td><img src="{{blog.image}}"></td>
+                        <td>{{blog.describe}}</td>
                         <td>{{blog.content}}</td>
                         <td>
-                            <button type="button" class="btn btn-default" (click)="adminFormBlog.adminForm(blog.id)">Edit</button>
-                            <button type="button" class="btn btn-default" (click)="removeAdminForm(blog.id)">Remove</button>
+                            <button type="button" class="btn btn-primary" (click)="adminFormBlog.adminForm(blog.id)">Edit</button>
+                            <button type="button" class="btn btn-danger" (click)="removeAdminForm(blog.id)">Remove</button>
                         </td>
                     </tr>
                 </tbody>
