@@ -40,11 +40,10 @@ export class BlogDetailResolverService implements Resolve<Blog> {
   }
 }
 
-// 获取上一条记录
 @Injectable()
 export class PreBlogResolverService implements Resolve<Blog> {
 
-  preBlog: Blog; //上一条记录
+  preBlog: Blog; 
   constructor(private blogService: BlogService, private router: Router) { }
 
   resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Promise<Blog> {
@@ -64,10 +63,10 @@ export class PreBlogResolverService implements Resolve<Blog> {
 }
 
 
-// 获取下一条记录
+
 @Injectable()
 export class NextBlogResolverService implements Resolve<Blog> {
-  nextBlog: Blog = new Blog();//下一条记录
+  nextBlog: Blog = new Blog();
   constructor(private blogService: BlogService, private router: Router) { }
 
   resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Promise<Blog> {

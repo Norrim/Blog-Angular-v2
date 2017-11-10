@@ -1,14 +1,15 @@
 # Angular4Blog
 
-利用Angular4最新版本实现博客系统，功能包括：浏览博文，发布博文、搜索博文、发表评论等。
+Création d'un projet Blog sous Angular 4
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.1.0.
 
 ## Get the Code
 ```
-git clone https://github.com/JetLu/Angular4-Blog.git Angular4-Blog
+git clone https://github.com/Norrim/Blog-Angular-v2.git Angular4-Blog
 cd Angular4-Blog
 npm install
+npm start
 
 ```
 
