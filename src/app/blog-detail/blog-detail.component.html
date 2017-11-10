@@ -1,0 +1,247 @@
+<!-- <div id="page" class="single">
+    <div id="fh5co-aside" style="background-image: url(../assets/images/image_2.jpg)" data-stellar-background-ratio="0.5">
+        <div class="overlay"></div>
+        <div class="page-title">
+            <img src="../assets/images/person_1.jpg">
+            <span>{{blog.createdTime}}</span>
+            <h2 class="text-overflow">{{blog.title}}</h2>
+        </div>
+    </div>
+    <div id="fh5co-main-content">
+        <div class="fh5co-post">
+            <div class="fh5co-entry padding">
+                <div>
+                    {{blog.content}}
+                </div>
+            </div>
+        </div>
+        <router-outlet></router-outlet>
+    </div>
+</div> -->
+
+<div class="technology">
+    <div class="container">
+        <div class="col-md-9 technology-left">
+            <div class="agileinfo" *ngIf="blog">
+
+                <h2 class="w3">{{blog.title}}</h2>
+                <div class="single">
+                    <img [src]="blog.image" class="img-responsive" alt="" style="width:100%">
+                    <div class="b-bottom">
+                        <!-- <h5 class="top">{{blog.title}}</h5> -->
+                        <br>
+                        <p class="sub">{{blog.content}}</p>
+                        <p>le {{blog.createdTime | date:"dd/MM/yyyy"}}
+                            <span class="glyphicon glyphicon-comment"></span>
+                            <span class="glyphicon glyphicon-eye-open"></span>{{blog.viewCount}}
+                        </p>
+
+                    </div>
+                </div>
+
+                <router-outlet></router-outlet>
+
+
+                
+            </div>
+        </div>
+
+        <!-- technology-right -->
+        <div class="col-md-3 technology-right">
+
+
+            <div class="blo-top1">
+
+                <div class="tech-btm">
+                    <div class="search-1">
+                        <form action="#" method="post">
+                            <input type="search" name="Search" value="Search" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Search';}"
+                                required="">
+                            <input type="submit" value=" ">
+                        </form>
+                    </div>
+                    <h4>Popular Posts </h4>
+                    <div class="blog-grids">
+                        <div class="blog-grid-left">
+                            <a href="singlepage.html">
+                                <img src="assets/images/t2.jpg" class="img-responsive" alt="">
+                            </a>
+                        </div>
+                        <div class="blog-grid-right">
+
+                            <h5>
+                                <a href="singlepage.html">Pellentesque dui Maecenas male</a>
+                            </h5>
+                        </div>
+                        <div class="clearfix"> </div>
+                    </div>
+                    <div class="blog-grids">
+                        <div class="blog-grid-left">
+                            <a href="singlepage.html">
+                                <img src="assets/images/m2.jpg" class="img-responsive" alt="">
+                            </a>
+                        </div>
+                        <div class="blog-grid-right">
+
+                            <h5>
+                                <a href="singlepage.html">Pellentesque dui Maecenas male</a>
+                            </h5>
+                        </div>
+                        <div class="clearfix"> </div>
+                    </div>
+                    <div class="blog-grids">
+                        <div class="blog-grid-left">
+                            <a href="singlepage.html">
+                                <img src="assets/images/f2.jpg" class="img-responsive" alt="">
+                            </a>
+                        </div>
+                        <div class="blog-grid-right">
+
+                            <h5>
+                                <a href="singlepage.html">Pellentesque dui Maecenas male</a>
+                            </h5>
+                        </div>
+                        <div class="clearfix"> </div>
+                    </div>
+                    <div class="blog-grids">
+                        <div class="blog-grid-left">
+                            <a href="singlepage.html">
+                                <img src="assets/images/t3.jpg" class="img-responsive" alt="">
+                            </a>
+                        </div>
+                        <div class="blog-grid-right">
+
+                            <h5>
+                                <a href="singlepage.html">Pellentesque dui Maecenas male</a>
+                            </h5>
+                        </div>
+                        <div class="clearfix"> </div>
+                    </div>
+                    <div class="blog-grids">
+                        <div class="blog-grid-left">
+                            <a href="singlepage.html">
+                                <img src="assets/images/m3.jpg" class="img-responsive" alt="">
+                            </a>
+                        </div>
+                        <div class="blog-grid-right">
+
+                            <h5>
+                                <a href="singlepage.html">Pellentesque dui Maecenas male</a>
+                            </h5>
+                        </div>
+                        <div class="clearfix"> </div>
+                    </div>
+                    <div class="insta">
+                        <h4>Instagram</h4>
+                        <ul>
+
+                            <li>
+                                <a href="singlepage.html">
+                                    <img src="assets/images/t1.jpg" class="img-responsive" alt="">
+                                </a>
+                            </li>
+                            <li>
+                                <a href="singlepage.html">
+                                    <img src="assets/images/m1.jpg" class="img-responsive" alt="">
+                                </a>
+                            </li>
+                            <li>
+                                <a href="singlepage.html">
+                                    <img src="assets/images/f1.jpg" class="img-responsive" alt="">
+                                </a>
+                            </li>
+                            <li>
+                                <a href="singlepage.html">
+                                    <img src="assets/images/m2.jpg" class="img-responsive" alt="">
+                                </a>
+                            </li>
+                            <li>
+                                <a href="singlepage.html">
+                                    <img src="assets/images/f2.jpg" class="img-responsive" alt="">
+                                </a>
+                            </li>
+                            <li>
+                                <a href="singlepage.html">
+                                    <img src="assets/images/t2.jpg" class="img-responsive" alt="">
+                                </a>
+                            </li>
+                            <li>
+                                <a href="singlepage.html">
+                                    <img src="assets/images/f3.jpg" class="img-responsive" alt="">
+                                </a>
+                            </li>
+                            <li>
+                                <a href="singlepage.html">
+                                    <img src="assets/images/t3.jpg" class="img-responsive" alt="">
+                                </a>
+                            </li>
+                            <li>
+                                <a href="singlepage.html">
+                                    <img src="assets/images/m3.jpg" class="img-responsive" alt="">
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <p>Lorem ipsum ex vix illud nonummy, novum tation et his. At vix scripta patrioque scribentur, at pro</p>
+                    <div class="twt">
+
+                        <iframe id="twitter-widget-0" scrolling="no" frameborder="0" allowtransparency="true" class="twitter-hashtag-button twitter-hashtag-button-rendered twitter-tweet-button"
+                            title="Twitter Tweet Button" src="https://platform.twitter.com/widgets/tweet_button.b7de008f493a5185d8df1aedd62d77c6.en.html#button_hashtag=TwitterStories&amp;dnt=false&amp;id=twitter-widget-0&amp;lang=en&amp;original_referer=https%3A%2F%2Fp.w3layouts.com%2Fdemos%2Fduplex%2Fweb%2F&amp;size=l&amp;time=1467721486626&amp;type=hashtag"
+                            style="position: static; visibility: visible; width: 166px; height: 28px;" data-hashtag="TwitterStories"></iframe>
+                        <script>!function (d, s, id) { var js, fjs = d.getElementsByTagName(s)[0], p = /^http:/.test(d.location) ? 'http' : 'https'; if (!d.getElementById(id)) { js = d.createElement(s); js.id = id; js.src = p + '://platform.twitter.com/widgets.js'; fjs.parentNode.insertBefore(js, fjs); } }(document, 'script', 'twitter-wjs');</script>
+                    </div>
+                </div>
+
+
+
+            </div>
+
+            <!-- <aside class="read-next">
+    <div class="fh5co-navigation">
+        <div class="fh5co-cover prev fh5co-cover-sm" style="background-image: url(../assets/images/project-4.jpg)">
+            <div class="overlay"></div>
+            <a *ngIf="preBlog.id" class="copy" [routerLink]="['/details',preBlog.id]">
+                <div class="display-t">
+                    <div class="display-tc">
+                        <div>
+                            <span>Previous Post</span>
+                            <h2>{{preBlog.title}}</h2>
+                        </div>
+                    </div>
+                </div>
+            </a>
+            <div class="copy">
+                <div class="display-t" *ngIf="!preBlog.id">
+                    <div class="display-tc">
+                        <div>
+                            <h2>没有上一篇了</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="fh5co-cover next fh5co-cover-sm" style="background-image: url(../assets/images/project-5.jpg)">
+            <div class="overlay"></div>
+            <a class="copy" *ngIf="nextBlog.id" [routerLink]="['/details',nextBlog.id]">
+                <div class="display-t">
+                    <div class="display-tc" *ngIf="nextBlog">
+                        <div>
+                            <span>Next Post</span>
+                            <h2>{{nextBlog.title}}</h2>
+                        </div>
+                    </div>
+                </div>
+            </a>
+            <div class="copy">
+                <div class="display-t" *ngIf="!nextBlog.id">
+                    <div class="display-tc">
+                        <div>
+                            <h2>没有下一篇了</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</aside> -->

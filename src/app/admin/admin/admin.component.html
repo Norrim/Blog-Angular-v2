@@ -1,0 +1,41 @@
+<div class="container" style=" background-color: #fff;width: 80%;margin-top: 20px;">
+    <div class="row">
+        <div class="col-sm-12 margin-top">
+            <div class="pull-right">
+                <button class="btn btn-primary" (click)="adminFormBlog.adminForm()"><i class="ion-plus m-right-xs"></i>New blog</button>
+                <admin-form-blog (onParentEvent)="onParentEvent()" #adminFormBlog></admin-form-blog>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-12 margin-top">
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th>id</th>
+                        <th style="width:15%">Title</th>
+                        <th>Date</th>
+                        <th>User</th>
+                        <th>views</th>
+                        <th style="width:30%">content</th>
+                        <th style="width:10%">actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let blog of blogArr">
+                        <td>{{blog.id}}</td>
+                        <td>{{blog.title}}</td>
+                        <td>{{blog.createdTime | date:"yyyy-MM-dd HH:mm:ss"}}</td>
+                        <td>{{blog.author}}</td>
+                        <td>{{blog.viewCount}}</td>
+                        <td>{{blog.content}}</td>
+                        <td>
+                            <button type="button" class="btn btn-default" (click)="adminFormBlog.adminForm(blog.id)">Edit</button>
+                            <button type="button" class="btn btn-default" (click)="removeAdminForm(blog.id)">Remove</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

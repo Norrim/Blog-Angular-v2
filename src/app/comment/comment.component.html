@@ -1,0 +1,110 @@
+<!-- <div class="fh5co-post">
+    <div class="fh5co-entry padding" style="margin-top: 30px;">
+        <div class="fh5co-post">
+            <div class="fh5co-entry" *ngFor="let comment of commentArr">
+                <div class="padding" style="border-top: solid rgba(158, 158, 158, 0.34) 1px;">
+                    <div><span class="glyphicon glyphicon-user" style="font-size: 12px;padding: 1px 5px;"></span>{{comment.reviewer}}</div>
+                    <div>
+                        <span class="fh5co-post-date">
+                            <span class="glyphicon glyphicon-time" style="font-size: 12px;padding: 1px 5px;"></span> {{comment.createdTime | date:"yyyy-MM-dd HH:mm:ss"}}
+                        </span>
+                        <p>{{comment.content}}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="fh5co-post">
+    <div class="fh5co-entry padding" style="margin-top: 30px;">
+        <form class="form-horizontal" #commentForm="ngForm" novalidate>
+            <div class="form-group">
+                <label for="nickName" class="col-sm-2 control-label">Name</label>
+                <div class="col-sm-10">
+                    <input class="form-control" id="nickName" name="nickName" [(ngModel)]="name" #nickName="ngModel" required>
+                    <div [hidden]="nickName.valid || nickName.pristine" class="alert alert-danger">
+                        <p *ngIf="nickName.errors?.required">Name required</p>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="content" class="col-sm-2 control-label">Content</label>
+                <div class="col-sm-10">
+                    <textarea class="form-control" id="content" rows="10" name="content" [(ngModel)]="con1" #content="ngModel" required></textarea>
+                    <div [hidden]="content.valid || content.pristine" class="alert alert-danger">
+                        <p *ngIf="content.errors?.required">Content required</p>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-sm-offset-2 col-sm-10">
+                    <button (click)="add(commentForm); commentForm.reset()" [disabled]="!commentForm.form.valid" class="btn btn-default">Done</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div> -->
+
+<div class="response">
+    <h4>Commentaires</h4>
+    <div class="media response-info" *ngFor="let comment of commentArr">
+        <div class="media-left response-text-left">
+            <a href="#">
+                <img src={{comment.image}} class="img-responsive" alt="">
+            </a>
+        </div>
+        <div class="media-body response-text-right">
+            <h4>{{comment.reviewer}}</h4>
+            <p> {{comment.content}}</p>
+            <ul>
+                <li>{{comment.createdTime | date:"le dd/MM/yyyy"}}</li>
+               
+            </ul>
+        </div>
+        <div class="clearfix"> </div>
+        <hr>
+    </div>
+
+    <div class="coment-form">
+        <h4>Répondre</h4>
+        <form class="form-horizontal" #commentForm="ngForm" novalidate>
+                <div class="form-group">
+                    
+                    <div class="col-sm-10">
+                        <input placeholder="Nom" class="form-control" id="nickName" name="nickName" [(ngModel)]="name" #nickName="ngModel" required>
+                        <div [hidden]="nickName.valid || nickName.pristine" class="alert alert-danger">
+                            <p *ngIf="nickName.errors?.required">Nom requis</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                        
+                        <div class="col-sm-10">
+                            <input placeholder="Avatar (url de l'image)" class="form-control" id="avatar" name="avatar" [(ngModel)]="image" #avatar="ngModel" required>
+                            <div [hidden]="avatar.valid || avatar.pristine" class="alert alert-danger">
+                                <p *ngIf="avatar.errors?.required">Url de l'avatar requise</p>
+                            </div>
+                        </div>
+                    </div>
+
+                <div class="form-group">
+                    
+                    <div class="col-sm-10">
+                        <textarea class="form-control" placeholder="Commentaire ..." id="content" rows="10" name="content" [(ngModel)]="con1" #content="ngModel" required></textarea>
+                        <div [hidden]="content.valid || content.pristine" class="alert alert-danger">
+                            <p *ngIf="content.errors?.required">Commentaire requis</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-sm-offset-2 col-sm-10">
+                        <button (click)="add(commentForm); commentForm.reset()" [disabled]="!commentForm.form.valid" class="btn btn-bht1">Envoyer</button>
+                    </div>
+                </div>
+            </form>
+    </div>
+    <div class="clearfix"></div>
+
+   
+</div>
