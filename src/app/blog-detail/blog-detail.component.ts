@@ -11,8 +11,8 @@ import { Blog } from '../model/blog'
 })
 export class BlogDetailComponent implements OnInit {
   blog: Blog;
-  preBlog: Blog; //上一条记录
-  nextBlog: Blog;//下一条记录
+  preBlog: Blog; 
+  nextBlog: Blog;
 
   constructor(private blogService: BlogService, private route: ActivatedRoute, private router: Router, ) { }
 

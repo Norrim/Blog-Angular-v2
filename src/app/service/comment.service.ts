@@ -9,7 +9,8 @@ export class CommentService {
   private headers = new Headers({ 'Content-Type': 'application/json' });
   private strUrl = 'api/comments';
   constructor(private http: Http) { }
-  //依据blogid获取Comment列表
+  
+  // Affiche un commentaire selon l'id du blog
   getCommentByBlogId(postId: number) {
     const url = `${this.strUrl}/?postId=${postId}`;
     return this.http.get(url)
@@ -18,7 +19,7 @@ export class CommentService {
       .catch(this.handleError);
   }
 
-
+  //creer un commentaire
   create(commentObj: string): Promise<Comment> {
     return this.http
       .post(this.strUrl, commentObj, { headers: this.headers })
@@ -27,6 +28,7 @@ export class CommentService {
       .catch(this.handleError);
   }
 
+  //supprimer un commentaire
   delete(id: number): Promise<void> {
     const url = `${this.strUrl}/${id}`;
     return this.http.delete(url, { headers: this.headers })

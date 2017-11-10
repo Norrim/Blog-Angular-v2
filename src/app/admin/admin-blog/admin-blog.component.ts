@@ -22,16 +22,16 @@ export class AdminBlogComponent implements OnInit {
   ngOnInit() {
   }
 
-  // 添加blog信息
+ 
   addOrUpdateBlog(blog: Blog) {
-    //修改记录
+    
     if (blog.id) {
       this.blogService.update(blog).then(result => {
         this.hideBlogFormModal();
         this.onParentEvent.emit();
       });
     } else {
-      // 创建记录
+      
       let commentObj = {
         id: (new Date()).valueOf(),
         title: blog.title,
@@ -48,10 +48,9 @@ export class AdminBlogComponent implements OnInit {
     }
   }
 
-  // 创建或者编辑
-  // modal显示
+ 
   public adminForm(id: Number): void {
-    //如果是
+   
     if (id) {
       this.blogService.getBlog(id).then(result => {
         this.blogModel = result;
@@ -63,7 +62,7 @@ export class AdminBlogComponent implements OnInit {
     this.childModal.show();
   }
 
-  // 隐藏modal
+  
   public hideBlogFormModal(): void {
     this.childModal.hide();
   }

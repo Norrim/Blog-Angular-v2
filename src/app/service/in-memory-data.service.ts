@@ -6,7 +6,7 @@ export class InMemoryDataService implements InMemoryDbService {
   constructor() { }
 
   createDb() {
-    // 博客信息
+    // création de données blog
     const blogs = [
       {
        id: 11, 
@@ -44,7 +44,7 @@ export class InMemoryDataService implements InMemoryDbService {
       },
        ];
 
-    // 评论信息
+    // creation de données comments
     const comments = [
       { id: 11, image:'../assets/images/2.jpg', postId: '11', createdTime: '2017-06-01 12:17:41', content: 'This shot has navigated right into my heart.', reviewer: 'Laura' },
       { id: 12, image:'../assets/images/3.jpg', postId: '11', createdTime: '2017-06-02 12:17:41', content: "Mission accomplished. It's fab mate.", reviewer: 'Joseph' },
